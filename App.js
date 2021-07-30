@@ -4,6 +4,7 @@ import { FlatList, StyleSheet, Text, View, Alert, TouchableWithoutFeedback, Keyb
 import Header from "./components/Header";
 import ToDoItem from './components/ToDoItem';
 import AddTodo from './components/addTodo';
+// import Sandbox from './components/sandbox'
 
 export default function App() {
 
@@ -37,16 +38,18 @@ export default function App() {
 
   return (
 
+    // <Sandbox />
     <TouchableWithoutFeedback onPress={() =>{
       Keyboard.dismiss();
     }}>
       <View style={styles.container}> 
-        <View style={styles.header}>  
+         
           <Header />
           <View style={styles.content}> 
             <View style={styles.list}>   
               <AddTodo TaskHandler={TaskHandler}/> 
               <FlatList 
+                style={{marginTop: 20}}
                 data={todos}
                 renderItem={({item}) => (
                   <ToDoItem item={item} pressHandler={ClickHandler}/>
@@ -54,7 +57,7 @@ export default function App() {
               />
             </View>
           </View>
-        </View> 
+        
         <StatusBar style="auto" />
       </View>
     </TouchableWithoutFeedback>
@@ -67,9 +70,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     },
   content: {
+    flex: 1,
     padding: 40,
   },
   list: {
+    flex: 1,
     marginTop: 20,
   }
 });

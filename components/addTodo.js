@@ -19,7 +19,7 @@ export default function AddTodo({TaskHandler}){
             <Button 
                 onPress = {() => TaskHandler(newtask)}
                 title = 'Add Task'
-                color = 'coral'
+                color = '#1b6fcf'
             />
         </View>
     );
@@ -33,5 +33,5 @@ const styles = StyleSheet.create({
         borderStyle: 'dotted',
         borderColor: 'gray',
         
-    }
-})
+    },
+});
